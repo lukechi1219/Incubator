@@ -1,2 +1,10 @@
 Hello GitHub!!
 Welcome to the Future!
+
+IDBWrapper: A cross-browser wrapper for IndexedDB.
+it's a cross-browser wrapper for the HTML5 IndexedDB API. 
+While this API is the future of offline storage, it is not very intuitive to use. 
+IDBWrapper is there to provide easy access to IndexedDB's features. 
+
+http://jensarps.github.io/IDBWrapper/
+
