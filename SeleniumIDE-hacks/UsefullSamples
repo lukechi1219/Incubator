@@ -1,0 +1,65 @@
+<tr>
+	<td>storeXpathCount</td>
+	<td>//body/table[1]//tr[2]//td[1]//table[4]//tr</td>
+	<td>NumberOfRows</td>
+</tr>
+
+<tr>
+	<td>storeAttribute</td>
+	<td>//body/table[1]//tr[2]//td[1]//table[4]//tr[2]/td[1]/a[1]@href</td>
+	<td>Url</td>
+</tr>
+
+<!-- exec js with eval -->
+<tr>
+	<td>getEval</td>
+	<td>var temp = storedVars.Url.split('code=')[1] ; temp = temp.split('&')[0]; storedVars.Code = temp ; </td>
+	<td></td>
+</tr>
+
+<!-- https://addons.mozilla.org/zh-tw/firefox/addon/flow-control/ -->
+<!-- https://github.com/davehunt/selenium-ide-flowcontrol -->
+<tr>
+	<td>while</td>
+	<td>storedVars.NumberOfRows > 0</td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>endWhile</td>
+	<td></td>
+	<td></td>
+</tr>
+
+<!-- store text in html table cell. -->
+<tr>
+	<td>storeText</td>
+	<td>//body/table[1]//tr[2]//td[1]//table[6]//tr/td[1]//tr[${NumberOfRows}]/td[1]</td>
+	<td>date</td>
+</tr>
+
+<tr>
+	<td>getEval</td>
+	<td> storedVars.record = new Array() ; index = 0;</td>
+	<td></td>
+</tr>
+
+<tr>
+	<td>getEval</td>
+	<td> storedVars.record[ index ] = storedVars.date +'-'+ storedVars.value ; index = index+1;</td>
+	<td></td>
+</tr>
+
+<!-- echo storedVars.NumberOfRows -->
+<tr>
+	<td>echo</td>
+	<td>${NumberOfRows}</td>
+	<td></td>
+</tr>
+
+<!-- echo dynamically defined variable -->
+<tr>
+	<td>echo</td>
+	<td>javascript{ index }</td>
+	<td></td>
+</tr>
